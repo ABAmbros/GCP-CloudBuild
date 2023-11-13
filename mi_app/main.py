@@ -6,4 +6,4 @@ def funtion_activation(event, context):
     """
     file = event
     print(f"Processing file: {file['name']}.")
-    print("hola mundo")
+    print("HOLA HOLA")
