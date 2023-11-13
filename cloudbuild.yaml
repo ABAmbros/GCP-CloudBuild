@@ -1,0 +1,11 @@
+steps:
+- name: 'gcr.io/cloud-builders/gcloud'
+  args:
+  - functions
+  - deploy
+  - funtion-activation
+  - --region=europe-west1
+  - --source=./mi_app
+  - --trigger-bucket=gs://bucket-mio
+  - --allow-unauthenticated
+  - --runtime=python39
