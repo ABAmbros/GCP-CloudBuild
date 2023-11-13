@@ -3,7 +3,7 @@ steps:
   args:
   - functions
   - deploy
-  - funtion-activation
+  - funtion_activation
   - --region=europe-west1
   - --source=./mi_app
   - --trigger-bucket=gs://bucket-mio
