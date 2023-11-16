@@ -3,9 +3,9 @@ steps:
   args:
   - functions
   - deploy
-  - funtion_activation
+  - read_json_from_gcs
   - --region=europe-west1
   - --source=./mi_app
-  - --trigger-bucket=gs://bucket-mio
+  - --trigger-bucket=gs://mi-bucket-proyecto
   - --allow-unauthenticated
   - --runtime=python39
