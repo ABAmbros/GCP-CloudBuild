@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<br>
+    <form action="/" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-25" id="nombre" name="nombre" placeholder="Nombre" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-25" id="email" name="email" placeholder="Correo Electrónico" type="email">
+        </div>
+        <button class="btn btn-primary" type="submit">Enviar</button>
+    </form>
+
+{% endblock %}

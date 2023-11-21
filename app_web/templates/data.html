@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Tabla de usuarios
+{% endblock %}
+
+{% block main %}
+
+    <h3>Tabla de usuarios</h3>
+    <table class="table mx-auto w-50">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Correo eletrónico</th>
+                <th scope="col">Fecha de registro</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+            <tr>
+                <td class="center-align">{{ item["ID"] }}</td>
+                <td class="center-align">{{ item["Nombre"] }}</td>
+                <td class="center-align">{{ item["Correo electrónico"] }}</td>
+                <td class="center-align">{{ item["Fecha de registro"] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

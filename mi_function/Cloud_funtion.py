@@ -35,7 +35,7 @@ def read_json_from_gcs(event, context):
     registro_name = f"registro-{counter_value}"
 
     # Guardar los datos en Firestore con el nombre descriptivo
-    collection_name = "bbdd-gcp"
+    collection_name = "bbdd-gcp" 
     firestore_client.collection(collection_name).document(registro_name).set(data)
 
     print(f"Datos guardados correctamente en la bbdd como {registro_name}")
