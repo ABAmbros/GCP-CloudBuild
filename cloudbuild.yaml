@@ -23,7 +23,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args:
       - push
-      - europe-west1-docker.pkg.dev/rational-being-404309/repo-imagenes/my-cloud-run-image
+      - europe-west1-docker.pkg.dev/rational-being-404309/repo-imagenes/my-cloud-run-image # Artifacts Registry/Proyecto en GCP/Carpeta de Artifact que contiene la imagen/Nombre de la imagen que crea a partir de la imagen de Docker
 
   # Paso 4. Despliegue en Cloud Run: Despliega la imagen de Docker almacenada en Artifact Registry en Cloud Run.
   - name: 'gcr.io/cloud-builders/gcloud'
