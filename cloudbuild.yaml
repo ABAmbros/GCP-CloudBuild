@@ -17,7 +17,7 @@ steps:
       - build
       - -t
       - europe-west1-docker.pkg.dev/rational-being-404309/repo-imagenes/my-cloud-run-image
-      - ./app_web
+      - ./ 
 
   # Paso 3. Subida de la imagen a Artifact Registry. Utiliza el Builder de Docker para subir la imagen construida a Artifact Registry.
   - name: 'gcr.io/cloud-builders/docker'
