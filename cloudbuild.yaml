@@ -1,13 +1,42 @@
 steps:
-- name: 'gcr.io/cloud-builders/gcloud'
-  args:
-  - functions
-  - deploy
-  - read_json_from_gcs
-  - --region=europe-west1
-  - --source=./mi_function
-  - --trigger-bucket=gs://mi-bucket-proyecto
-  - --allow-unauthenticated
-  - --runtime=python39
+  # Paso 1. Despliegue de Cloud Function
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - functions
+      - deploy
+      - read_json_from_gcs
+      - --region=europe-west1
+      - --source=./mi_function
+      - --trigger-bucket=gs://mi-bucket-proyecto
+      - --allow-unauthenticated
+      - --runtime=python39
+  
+  # Paso 2. Construcción de la imagen de Docker para Cloud Run. 
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - build
+      - -t
+      - europe-west1-docker.pkg.dev/rational-being-404309/repo-imagenes/my-cloud-run-image
+      - ./app_web
+
+  # Paso 3. Subida de la imagen a Artifact Registry. Utiliza el Builder de Docker para subir la imagen construida a Artifact Registry.
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - push
+      - europe-west1-docker.pkg.dev/rational-being-404309/repo-imagenes/my-cloud-run-image
+
+  # Paso 4. Despliegue en Cloud Run: Despliega la imagen de Docker almacenada en Artifact Registry en Cloud Run.
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - run
+      - deploy
+      - my-cloud-run-service
+      - --image=europe-west1-docker.pkg.dev/rational-being-404309/repo-imagenes/my-cloud-run-image
+      - --region=europe-west1
+      - --platform=managed
+      - --allow-unauthenticated
+      - --port=8080
+images:
+- europe-west1-docker.pkg.dev/rational-being-404309/repo-imagenes/my-cloud-run-image
 
   
