@@ -364,6 +364,8 @@ images:
 
 ![Alt text](img/cloud_build.png)
 
+![Alt text](img/cloud_run.png)
+
 Con el Cloud Build desplegado con éxito, el resultado final es una arquitectura similar a la siguiente:
 
 ![Alt text](img/Resultado-final.png)
