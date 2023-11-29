@@ -1,6 +1,6 @@
 # Proyecto Google Cloud Platform
 
-![Alt text](img/google_data_cloud_summit.max-2200x2200.jpg)
+![Alt text](img/cabecera.png)
 
 ## Parte 1 - Implementación de una Cloud Function:
 
