@@ -48,7 +48,7 @@ def index():
         # Verifica que los campos no estén vacíos antes de procesar
         if nombre and email:
             usuario = {
-                'ID': random.randint(10000, 99999),
+                'ID': random.randint(100000, 999999),
                 'Nombre': nombre,
                 'Correo electrónico': email,
                 'Fecha de registro': today
